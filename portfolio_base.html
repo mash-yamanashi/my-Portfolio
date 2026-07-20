@@ -1,9 +1,10 @@
-<!DOCTYPE html>
+TYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio | Web Designer</title>
+    <meta name="description" content="Webデザイナー・ライターとして活動するポートフォリオサイトです。">
+    <title>まっしゅ山梨</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -265,6 +266,62 @@
             color: var(--accent-color);
         }
 
+        /* 経歴タイムラインのスタイル */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 1rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 19px;
+            height: 100%;
+            width: 2px;
+            background-color: var(--border-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 60px;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 14px;
+            top: 6px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--accent-color);
+            box-shadow: 0 0 0 4px var(--bg-color), 0 0 0 5px var(--border-color);
+        }
+
+        .timeline-date {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 0.3rem;
+            font-weight: 500;
+        }
+
+        .timeline-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-text {
+            font-size: 0.95rem;
+        }
+
         .contact {
             text-align: center;
             background-color: #f9fafb;
@@ -314,9 +371,10 @@
             <a href="#" class="logo">Portfolio.</a>
             <nav>
                 <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#works">Works</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#about">私について</a></li>
+                    <li><a href="#experience">経歴</a></li>
+                    <li><a href="#works">実績</a></li>
+                    <li><a href="#contact">お問い合わせ</a></li>
                 </ul>
             </nav>
         </div>
@@ -325,29 +383,57 @@
     <main>
         <section class="hero container">
             <div class="fade-in">
-                <h1>Hello, I'm a <br><span>Web Designer</span> & <span>Writer</span>.</h1>
-                <p>シンプルで美しいデザインと、心に届く言葉を紡ぎます。東京を拠点に活動中。</p>
+                <h1><br>思考の整理から制作まで。</span></h1>
+                <p>あなたの「やりたい」に優しく伴走します。</p>
             </div>
         </section>
 
         <section id="about" class="container">
-            <h2 class="section-title fade-in">About</h2>
+            <h2 class="section-title fade-in">私について</h2>
             <div class="about-content fade-in">
                 <img src="S__4792326.jpg" alt="Profile Picture" class="profile-img">
                 <div class="about-text">
-                    <h3 style="margin-bottom: 1rem; font-weight: 500;">Your Name</h3>
-                    <p style="margin-bottom: 1.5rem;">Webデザイナー / ライター</p>
+                    <h3 style="margin-bottom: 1rem; font-weight: 500;">まっしゅ山梨 (mash yamanashi)</h3>
+                    <p style="margin-bottom: 1.5rem;">伴走型マルチディレクター</p>
                     <p>
-                        ここに自己紹介文が入ります。これまでの経歴や、デザインに対する考え方、得意な領域などを簡潔に記載します。
-                        余白を活かし、ユーザーが読み疲れしない文字量と行間を意識してスタイリングしています。
-                        AIによる自動生成のような無機質さを避けるため、あなた自身の言葉でストーリーを語る場所です。
+                        IT系専門学校を卒業後、
+                        「個人でビジネスを立ち上げ、自走する」ことを目標に、
+                        意図的に多岐にわたる領域で経験を積んできました。
+                        自身でのビジネス立ち上げ経験があるからこそ、
+                        机上の空論ではない、現場目線での実践的なサポートが可能です。
+                        あなたの理想を叶えるために一緒に走ります。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="container">
+            <h2 class="section-title fade-in">経歴</h2>
+            <div class="timeline fade-in">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2013年3月</div>
+                    <h3 class="timeline-title">マルチメディア科を卒業</h3>
+                    <p class="timeline-text">サイト作成から画像編集、PCで行える作業を全般的に学習</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2013年4月 - 2017年3月</div>
+                    <h3 class="timeline-title">福祉事業所にてデザイナーとしてのスタート</h3>
+                    <p class="timeline-text">障がい者の支援をしながら授産品のデザインや再生紙での公官庁などの名刺の受注に伴うデザインや画像処理、缶バッジのデザインからデザイナーとしての取り組みをスタート</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2017年4月 - 現在</div>
+                    <h3 class="timeline-title">フリーランスとして起業</h3>
+                    <p class="timeline-text">強みであるITや趣味から始まったカメラマンとしてSNSマーケティングをメインに起業。フリーランスならではの0から100まで自分で考え、行動する中で必要なスキルを1つずつ取得し。自分の強みとしてきました。そこで出来上がったのが伴走型のマルチディレクターです。
                     </p>
                 </div>
             </div>
         </section>
 
         <section id="works" class="container">
-            <h2 class="section-title fade-in">Selected Works</h2>
+            <h2 class="section-title fade-in">実績・作品</h2>
             
             <h3 style="margin-bottom: 1.5rem; font-size: 1.2rem; font-weight: 500;" class="fade-in">Design & Visuals</h3>
             <div class="works-grid fade-in">
@@ -373,45 +459,19 @@
                 </a>
             </div>
 
-            <h3 style="margin-bottom: 1.5rem; font-size: 1.2rem; font-weight: 500; margin-top: 4rem;" class="fade-in">Writing</h3>
-            <ul class="writing-list fade-in">
-                <li class="writing-item">
-                    <a href="#">
-                        <div class="writing-meta">
-                            <span>2023.10.15</span>
-                            <span>Web Design Magazine</span>
-                        </div>
-                        <h4 class="writing-title">余白がもたらすユーザー体験の向上について</h4>
-                        <p style="color: var(--text-muted); font-size: 0.95rem;">UIデザインにおけるホワイトスペースの役割と、心理的効果についての考察記事です。</p>
-                    </a>
-                </li>
-                <li class="writing-item">
-                    <a href="#">
-                        <div class="writing-meta">
-                            <span>2023.08.22</span>
-                            <span>Tech Blog</span>
-                        </div>
-                        <h4 class="writing-title">これからのWebデザイナーに求められるスキルセット</h4>
-                        <p style="color: var(--text-muted); font-size: 0.95rem;">ノーコードツールの普及を背景に、デザイナーが価値を発揮するための思考法をまとめました。</p>
-                    </a>
-                </li>
-            </ul>
-        </section>
-
         <section id="contact" class="contact">
             <div class="container fade-in">
-                <h2 class="section-title">Contact</h2>
+                <h2 class="section-title">お問い合わせ</h2>
                 <p style="max-width: 600px; margin: 0 auto;">
                     お仕事のご依頼やご相談は、メールにてお気軽にご連絡ください。<br>
-                    3営業日以内にご返信いたします。
                 </p>
-                <a href="mailto:your-email@example.com" class="btn">メールを送る</a>
+                <a href="mailto:clover.mitsui.a@gmail.com" class="btn">メールを送る</a>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Your Name. All Rights Reserved.</p>
+        <p>&copy; 2024 Taro Yamada. All Rights Reserved.</p>
     </footer>
 
     <script>
