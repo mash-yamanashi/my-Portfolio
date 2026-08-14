@@ -16,12 +16,12 @@ function summaryBlockChildren(item) {
 
 /**
  * タスク管理DBにレコードを作成する。
- * プロパティ: タイトル(title) / 期限(date) / ステータス(status) / Google Task ID(rich_text)
+ * プロパティ: タイトル(title) / 期限(date) / ステータス(select) / Google Task ID(rich_text)
  */
 export async function createTaskPage(item) {
   const properties = {
     'タイトル': { title: [{ text: { content: item.title } }] },
-    'ステータス': { status: { name: '未着手' } },
+    'ステータス': { select: { name: '未着手' } },
   };
 
   if (item.due_date) {
