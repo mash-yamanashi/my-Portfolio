@@ -1,0 +1,17 @@
+{
+  "name": "notion-inbox-sorter",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Notion InboxページのメモをClaude APIで分類し、Google Tasks / Notion DBへ自動振り分けするバッチ",
+  "scripts": {
+    "start": "node src/index.js",
+    "auth:google": "node scripts/get-google-refresh-token.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.32.0",
+    "@notionhq/client": "^2.2.15",
+    "dotenv": "^16.4.5",
+    "googleapis": "^174.0.1"
+  }
+}
