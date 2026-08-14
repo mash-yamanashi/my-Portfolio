@@ -1,0 +1,38 @@
+name: Notion Inbox Sync
+
+on:
+  schedule:
+    # 5時間ごと (UTC 0:00, 5:00, 10:00, 15:00, 20:00)
+    - cron: '0 */5 * * *'
+  workflow_dispatch: {}
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: notion-inbox-sorter
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Notion Inbox sorter
+        run: npm start
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          CLAUDE_MODEL: ${{ vars.CLAUDE_MODEL }}
+          NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
+          NOTION_INBOX_PAGE_ID: ${{ secrets.NOTION_INBOX_PAGE_ID }}
+          NOTION_TASK_DB_ID: ${{ secrets.NOTION_TASK_DB_ID }}
+          NOTION_KNOWLEDGE_DB_ID: ${{ secrets.NOTION_KNOWLEDGE_DB_ID }}
+          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+          GOOGLE_TASKLIST_ID: ${{ vars.GOOGLE_TASKLIST_ID }}
+          TIMEZONE: ${{ vars.TIMEZONE }}
