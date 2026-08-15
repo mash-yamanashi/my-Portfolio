@@ -1,9 +1,10 @@
 name: Notion Inbox Sync
 
 on:
-  schedule:
-    # 5時間ごと (UTC 0:00, 5:00, 10:00, 15:00, 20:00)
-    - cron: '0 */5 * * *'
+  # Secretsの設定不備により自動実行を一時停止中。修正後、下記のcronコメントを解除してください。
+  # schedule:
+  #   # 5時間ごと (UTC 0:00, 5:00, 10:00, 15:00, 20:00)
+  #   - cron: '0 */5 * * *'
   workflow_dispatch: {}
 
 jobs:
